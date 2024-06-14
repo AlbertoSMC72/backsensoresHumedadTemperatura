@@ -9,6 +9,6 @@ const prefijo = "app";
 
 router.use(`/${prefijo}/user`, usersRouter)
 router.use(`/${prefijo}/auth`, loguinRouter);
-router.user(`/${prefijo}/data`, dataRouter)
+router.use(`/${prefijo}/data`, dataRouter)
 
 export default router;

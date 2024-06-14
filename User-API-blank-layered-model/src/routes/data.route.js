@@ -7,3 +7,5 @@ dataRouter.get('/', getDataController);
 dataRouter.get('/dates', getFechaController);
 dataRouter.get('/average', getAverageMonthController);
 dataRouter.post('/', postDataController);
+
+export default dataRouter;  

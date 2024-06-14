@@ -20,12 +20,14 @@ export const getDataByDate = async (data) => {
 }
 
 export const getAverageMonth = async () => {
+
     try {
         const data = await Data.aggregate([
             {
                 $group: {
                     _id: { $month: "$dateRegistered" },
-                    avg: { $avg: "$value" }
+                    avgTemperature: { $avg: { $avg: ["$temperature1", "$temperature2", "$temperature3", "$temperature4", "$temperature5"] } },
+                    avgHumidity: { $avg: { $avg: ["$humidity1", "$humidity2", "$humidity3", "$humidity4", "$humidity5"] } }
                 }
             }
         ]).exec();
