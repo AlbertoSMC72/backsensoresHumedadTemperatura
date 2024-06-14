@@ -7,7 +7,7 @@ const saltRounds = parseInt(process.env.SALT_ROUNDS_BCRYPT);
 export const getUsersService = async () => {
     try {
         const users = await getUsers();
-        return users[0];
+        return users;
     } catch (error) {
         throw error;
     }
