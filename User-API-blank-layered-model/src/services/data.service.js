@@ -11,12 +11,12 @@ export const getDataService = async () => {
 
 export const getFechaService = async (dates) => {
     try {
-        const fecha = new getDataByDate(dates);
+        const fecha = await getDataByDate(dates);  
         return fecha;
     } catch (error) {
         throw error;
     }
-}
+};
 
 export const getAverageMonthService = async () => {
     try {

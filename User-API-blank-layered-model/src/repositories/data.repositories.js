@@ -12,12 +12,12 @@ export const getData = async () => {
 export const getDataByDate = async (data) => {
     const { dateStart, dateEnd } = data;
     try {
-        const data = await Data.find({ dateRegistered: { $gte: dateStart, $lte: dateEnd } }).exec();
-        return data;
+        const result = await Data.find({ dateRegistered: { $gte: dateStart, $lte: dateEnd } }).exec();
+        return result;
     } catch (error) {
         throw error;
     }
-}
+};
 
 export const getAverageMonth = async () => {
 
